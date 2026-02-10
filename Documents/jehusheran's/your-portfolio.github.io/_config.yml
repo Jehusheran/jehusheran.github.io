@@ -1,0 +1,22 @@
+colors:
+  primary: '#0f172a'        # Dark slate (AI/tech vibe)
+  accent: '#3b82f6'         # Blue (Flutter/YOLO branding)
+  background: '#0f0f23'     # Deep space
+colors:
+  primary: '#0f172a'      # Dark slate
+  accent: '#3b82f6'       # Flutter blue
+  text: '#f8fafc'         # Light text
+
+name: "Your Name"
+
+colors:
+  primary: '#0f172a'           # Navbar/footer background
+  accent: '#3b82f6'            # Buttons, hover states (Flutter blue)
+  background: '#0f0f23'        # Page backgrounds
+  text: '#f8fafc'              # Main text
+
+colors:
+  primary: '#0f172a'           # Navbar, cards (dark slate)
+  accent: '#3b82f6'            # Flutter/YOLO highlights
+  background: '#0f0f23'        # Page backgrounds
+  card: '#1a1a2e'              # Project cards
