@@ -1,0 +1,190 @@
+// _sass/main.scss - Free-to-Engineer Portfolio Dark Theme
+// Uses CSS custom properties from head.html + your colors[cite:17]
+
+/// @import statements (create partials below)
+@import "base/reset";
+@import "base/variables";
+@import "base/typography";
+@import "components/header";
+@import "components/footer";
+@import "components/buttons";
+@import "components/cards";
+@import "layouts/post";
+@import "utilities/animations";
+
+/// Root Variables (extend your _config.yml colors)
+:root {
+  // Your AI/ML dark theme palette
+  --primary: {{ site.colors.primary | default: '#0f172a' }};        // Slate 900
+  --primary-light: {{ site.colors.primary-light | default: '#1e293b' }}; // Slate 800
+  --accent: {{ site.colors.accent | default: '#3b82f6' }};          // Flutter Blue
+  --accent-hover: {{ site.colors.accent-hover | default: '#2563eb' }}; 
+  --success: #10b981;    // Emerald (metrics)
+  --warning: #f59e0b;    // Amber (attention)
+  --text: {{ site.colors.text | default: '#f8fafc' }};              // Slate 50
+  --text-muted: {{ site.colors.text-muted | default: '#94a3b8' }};  // Slate 400
+  --bg: {{ site.colors.background | default: '#0f0f23' }};         // Deep space
+  --card-bg: {{ site.colors.card | default: '#1a1a2e' }};           // Card backdrop
+  
+  // Spacing system
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  // Border radius
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  
+  // Shadows
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.15);
+  --shadow: 0 10px 30px rgba(0,0,0,0.3);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.4);
+  
+  // Transitions
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/// Dark mode base (your portfolio default)
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; // Account for fixed header
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  margin: 0;
+  overflow-x: hidden;
+  
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+/// Container utility
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+/// Section spacing
+section {
+  padding: var(--space-xl) 0;
+}
+
+/// Skill tags (YOLO, Flutter, Flask)
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(var(--accent), 0.1);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(var(--accent), 0.2);
+  
+  &:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-1px);
+  }
+}
+
+/// Metrics cards (92% accuracy, <50ms latency)[cite:20]
+.metric-item {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid rgba(var(--primary-light), 0.5);
+  
+  .metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--success));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/// Gallery grid (Smart Bus screenshots)
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  
+  .gallery-item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+/// Responsive utilities
+@media (max-width: 1024px) {
+  :root {
+    --space-xl: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+/// Custom scrollbars (macOS Safari friendly)
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}

@@ -1,0 +1,104 @@
+<!-- _layouts/post.html - Project & Research Paper Detail Layout -->
+---
+layout: default
+---
+
+<article class="post-layout" itemscope itemtype="https://schema.org/CreativeWork">
+  <!-- Project Header with Hero Image -->
+  <header class="post-header">
+    {% if page.main-image %}
+    <div class="post-hero" style="background-image: url('{{ page.main-image | relative_url }}');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
+        {% if page.date %}
+        <time class="post-date" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %Y" }}
+        </time>
+        {% endif %}
+      </div>
+    </div>
+    {% else %}
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% endif %}
+  </header>
+
+  <!-- Project Meta: Skills, GitHub, Live Demo -->
+  <section class="post-meta">
+    <div class="meta-tags">
+      {% if page.skills %}
+        {% for skill in page.skills %}
+          <span class="skill-tag">{{ skill }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
+    
+    <div class="meta-links">
+      {% if page.github %}
+        <a href="{{ page.github }}" class="btn-meta" target="_blank">
+          <i class="fab fa-github"></i> Source Code
+        </a>
+      {% endif %}
+      {% if page.demo %}
+        <a href="{{ page.demo }}" class="btn-meta" target="_blank">
+          <i class="fas fa-external-link-alt"></i> Live Demo
+        </a>
+      {% endif %}
+      {% if page.paper %}
+        <a href="{{ page.paper }}" class="btn-meta" download>
+          <i class="fas fa-file-pdf"></i> Paper PDF
+        </a>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="post-content" itemprop="description">
+    {{ content }}
+  </div>
+
+  <!-- Image Gallery (for Smart Bus screenshots, diagrams) -->
+  {% if page.images %}
+  <section class="post-gallery">
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+      {% for image in page.images %}
+        <figure class="gallery-item">
+          <img src="{{ image | relative_url }}" alt="{{ page.title }} screenshot" loading="lazy">
+        </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Tech Stack Breakdown -->
+  {% if page.tech-stack %}
+  <section class="post-tech">
+    <h3>Tech Stack</h3>
+    <div class="tech-grid">
+      {% for tech in page.tech-stack %}
+        <div class="tech-item">
+          <i class="{{ tech.icon }}"></i>
+          <span>{{ tech.name }}</span>
+          <small>{{ tech.version }}</small>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Metrics/Results (YOLO accuracy, passenger count precision) -->
+  {% if page.metrics %}
+  <section class="post-metrics">
+    <h3>Key Metrics</h3>
+    <div class="metrics-grid">
+      {% for metric in page.metrics %}
+        <div class="metric-item">
+          <div class="metric-value">{{ metric.value }}</div>
+          <div class="metric-label">{{ metric.label }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</article>

@@ -1,0 +1,96 @@
+# _data/skills.yml - Your AI/ML IoT Skills for Portfolio[cite:17][cite:20][cite:24]
+# Auto-generates Skills section with icons, proficiency bars
+
+skills:
+  - category: "AI / Machine Learning"
+    icon: "fas fa-brain"
+    color: "#3b82f6"  # Flutter blue
+    skills:
+      - name: "YOLOv8 Object Detection"
+        proficiency: 92   # Passenger counting accuracy[cite:23]
+        icon: "fas fa-eye"
+      - name: "scikit-learn"
+        proficiency: 90
+        icon: "fab fa-python"
+      - name: "PyTorch"
+        proficiency: 85
+        icon: "fab fa-pytorch"
+      - name: "Model Evaluation"
+        proficiency: 88
+        icon: "fas fa-chart-line"
+  
+  - category: "Backend & Cloud"
+    icon: "fas fa-server"
+    color: "#10b981"  # Emerald
+    skills:
+      - name: "Flask REST APIs"
+        proficiency: 95   # Smart Bus backend[cite:21]
+        icon: "fab fa-python"
+      - name: "PostgreSQL"
+        proficiency: 90
+        icon: "fas fa-database"
+      - name: "Firebase"
+        proficiency: 92   # Real-time data[cite:22]
+        icon: "fas fa-fire"
+      - name: "Docker"
+        proficiency: 85
+        icon: "fab fa-docker"
+  
+  - category: "Mobile Development"
+    icon: "fas fa-mobile-alt"
+    color: "#8b5cf6"  # Violet
+    skills:
+      - name: "Flutter"
+        proficiency: 93   # Smart Bus Tracker app[cite:22]
+        icon: "fab fa-flutter"
+      - name: "Dart"
+        proficiency: 92
+        icon: "fas fa-code"
+      - name: "State Management"
+        proficiency: 90
+        icon: "fas fa-layer-group"
+  
+  - category: "IoT & Hardware"
+    icon: "fas fa-microchip"
+    color: "#f59e0b"  # Amber
+    skills:
+      - name: "IoT Integration"
+        proficiency: 94   # Smart Bus system[cite:20]
+        icon: "fas fa-wifi"
+      - name: "Live GPS Tracking"
+        proficiency: 96
+        icon: "fas fa-map-marker-alt"
+      - name: "Edge Computing"
+        proficiency: 87
+        icon: "fas fa-tachometer-alt"
+  
+  - category: "Dev Tools & Workflow"
+    icon: "fas fa-tools"
+    color: "#ef4444"  # Red
+    skills:
+      - name: "VS Code"
+        proficiency: 99   # Your daily driver[cite:25]
+        icon: "fab fa-microsoft"
+      - name: "Git & GitHub"
+        proficiency: 95
+        icon: "fab fa-github"
+      - name: "Python Virtual Env"
+        proficiency: 98
+        icon: "fas fa-terminal"
+      - name: "LaTeX"
+        proficiency: 85   # Research papers[cite:13]
+        icon: "fas fa-file-alt"
+  
+  - category: "Research & Publishing"
+    icon: "fas fa-graduation-cap"
+    color: "#06b6d4"  # Cyan
+    skills:
+      - name: "Research Papers"
+        proficiency: 87   # Smart bus publication[cite:14]
+        icon: "fas fa-file-pdf"
+      - name: "IEEE/ResearchGate"
+        proficiency: 82
+        icon: "fas fa-university"
+      - name: "Technical Writing"
+        proficiency: 90
+        icon: "fas fa-edit"

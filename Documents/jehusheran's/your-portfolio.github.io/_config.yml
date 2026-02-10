@@ -20,3 +20,8 @@ colors:
   accent: '#3b82f6'            # Flutter/YOLO highlights
   background: '#0f0f23'        # Page backgrounds
   card: '#1a1a2e'              # Project cards
+
+name: "Jehu Sheran"
+description: "AI/ML Engineer | Smart Bus IoT | YOLO 92% | Bengaluru"
+github: "https://github.com/Jehusheran"
+linkedin: "https://linkedin.com/in/jehusheran"

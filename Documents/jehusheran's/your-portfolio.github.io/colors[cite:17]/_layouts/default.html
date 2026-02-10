@@ -1,0 +1,27 @@
+<!-- _layouts/default.html - Main Jekyll Layout for Free-to-Engineer Portfolio -->
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body class="default-body">
+  <!-- Fixed Header -->
+  {% include header.html %}
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay"></div>
+  
+  <!-- Main Content Area -->
+  <main id="main-content" class="main-content">
+    {{ content }}
+  </main>
+  
+  <!-- Fixed Footer -->
+  {% include footer.html %}
+  
+  <!-- Contact Form Modal (for Contact section) -->
+  {% include contact-form.html %}
+  
+  <!-- Global Scripts -->
+  <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- _includes/head.html from Free-to-Engineer Portfolio Template -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Site Title & Description from _config.yml -->
+  <title>{{ site.name }} - AI/ML IoT Engineer Portfolio</title>
+  <meta name="description" content="{% raw %}{{ site.description }}{% endraw %}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% raw %}{{ site.name }}{% endraw %}">
+  <meta property="og:description" content="{% raw %}{{ site.description }}{% endraw %}">
+  <meta property="og:image" content="{% raw %}{{ site.baseurl }}/assets/img/profile.jpg{% endraw %}">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="{% raw %}{{ site.name }}{% endraw %}">
+  <meta property="twitter:description" content="{% raw %}{{ site.description }}{% endraw %}">
+  <meta property="twitter:image" content="{% raw %}{{ site.baseurl }}/assets/img/profile.jpg{% endraw %}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{% raw %}{{ site.baseurl }}/assets/img/favicon.ico{% endraw %}">
+  
+  <!-- Google Fonts: Inter (modern tech font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="{% raw %}{{ site.baseurl }}/assets/css/main.css{% endraw %}">
+  
+  <!-- Colors from _config.yml - Dark theme for AI/ML vibe -->
+  <style>
+    :root {
+      /* Primary colors - Bengaluru tech palette */
+      --primary: {% raw %}{{ site.colors.primary | default: '#0f172a' }}{% endraw %};     /* Slate 900 */
+      --primary-light: {% raw %}{{ site.colors.primary-light | default: '#1e293b' }}{% endraw %}; /* Slate 800 */
+      --accent: {% raw %}{{ site.colors.accent | default: '#3b82f6' }}{% endraw %};       /* Blue 500 */
+      --accent-hover: {% raw %}{{ site.colors.accent-hover | default: '#2563eb' }}{% endraw %}; /* Blue 600 */
+      --text: {% raw %}{{ site.colors.text | default: '#f8fafc' }}{% endraw %};           /* Slate 50 */
+      --text-muted: {% raw %}{{ site.colors.text-muted | default: '#94a3b8' }}{% endraw %}; /* Slate 400 */
+      --bg: {% raw %}{{ site.colors.background | default: '#0f0f23' }}{% endraw %};       /* Dark BG */
+      --card-bg: {% raw %}{{ site.colors.card | default: '#1a1a2e' }}{% endraw %};        /* Card */
+      
+      /* Gradients for hero/projects */
+      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    }
+    
+    * { 
+      font-family: 'Inter', -apple-system, sans-serif; 
+      box-sizing: border-box; 
+    }
+    
+    body { 
+      background: var(--bg); 
+      color: var(--text); 
+      line-height: 1.6; 
+      margin: 0; 
+    }
+    
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+  
+  <!-- Font Awesome Icons (skills, social) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="{% raw %}{{ site.baseurl }}/manifest.json{% endraw %}">
+  
+  <!-- SEO: Structured data for projects/research -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{% raw %}{{ site.name }}{% endraw %}",
+    "jobTitle": "AI/ML Research Engineer",
+    "description": "{% raw %}{{ site.description }}{% endraw %}",
+    "url": "{% raw %}{{ site.url }}{% endraw %}",
+    "sameAs": [
+      "{% raw %}{{ site.data.social.github }}{% endraw %}",
+      "{% raw %}{{ site.data.social.linkedin }}{% endraw %}"
+    ],
+    "knowsAbout": ["AI/ML", "IoT", "Computer Vision", "Flutter"]
+  }
+  </script>
+</head>

@@ -1,0 +1,211 @@
+<!-- _includes/footer.html - Free-to-Engineer Portfolio Template -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      <div class="footer-section">
+        <!-- Profile/About Quick Links -->
+        <h3>{{ site.name }}</h3>
+        <p>{{ site.description }}</p>
+        <a href="{{ site.baseurl }}/#about" class="btn-footer">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <!-- Quick Navigation -->
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="{{ site.baseurl }}/#home">Home</a></li>
+          <li><a href="{{ site.baseurl }}/#about">About</a></li>
+          <li><a href="{{ site.baseurl }}/#projects">Projects</a></li>
+          <li><a href="{{ site.baseurl }}/#skills">Skills</a></li>
+          <li><a href="{{ site.baseurl }}/#research">Research</a></li>
+          <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social & Contact Links -->
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="social-links">
+          {% if site.data.social.github %}
+          <a href="{{ site.data.social.github }}" target="_blank" rel="noopener" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          {% endif %}
+          {% if site.data.social.linkedin %}
+          <a href="{{ site.data.social.linkedin }}" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          {% endif %}
+          {% if site.data.social.researchgate %}
+          <a href="{{ site.data.social.researchgate }}" target="_blank" rel="noopener" title="ResearchGate">
+            <i class="fab fa-researchgate"></i>
+          </a>
+          {% endif %}
+          {% if site.data.social.email %}
+          <a href="mailto:{{ site.data.social.email }}" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          {% endif %}
+        </div>
+        <!-- Resume Download -->
+        <a href="{{ site.baseurl }}/assets/pdf/resume.pdf" class="btn-footer mt-3" download>Download Resume</a>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ site.name }}. Built with <i class="fas fa-heart" style="color: var(--accent);"></i> using Jekyll & GitHub Pages.</p>
+      </div>
+      <div class="footer-bottom-right">
+        <a href="#top" class="back-to-top">
+          <i class="fas fa-chevron-up"></i> Back to Top
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* Footer Styles - Matches header theme */
+.site-footer {
+  background: var(--primary);
+  border-top: 1px solid var(--primary-light);
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-section p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--primary-light);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.btn-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-footer:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--primary-light);
+  font-size: 0.9rem;
+}
+
+.back-to-top {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 3rem 1rem 1.5rem;
+  }
+  
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+</style>
+
+<script>
+// Smooth scroll for back to top
+document.querySelector('.back-to-top')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
